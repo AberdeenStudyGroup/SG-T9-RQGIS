@@ -55,11 +55,17 @@ plot(UK)
 plot(centroids$geometry, pch = 21, add = TRUE, bg = "lightblue", col = "black")
 
 
-# select by attributes
+# select by attributes and save a new shapefile
 UK_sub <- UK[UK@data$NAME_1 != "England",]
 centroids_sub <- centroids[centroids$NAME_1 != "England",]
 
 
 plot(UK_sub)
 plot(centroids_sub$geometry, pch = 21, add = TRUE, bg = "lightblue", col = "black")
+
+writeOGR(UK_sub, "C:/Users/User/Documents/Study Group tutorials/RQGIS",
+         "UK_sub.shp",
+         driver="ESRI Shapefile")
+
+
 
