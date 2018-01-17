@@ -55,3 +55,11 @@ plot(UK)
 plot(centroids$geometry, pch = 21, add = TRUE, bg = "lightblue", col = "black")
 
 
+# select by attributes
+UK_sub <- UK[UK@data$NAME_1 != "England",]
+centroids_sub <- centroids[centroids$NAME_1 != "England",]
+
+
+plot(UK_sub)
+plot(centroids_sub$geometry, pch = 21, add = TRUE, bg = "lightblue", col = "black")
+
